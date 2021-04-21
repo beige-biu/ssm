@@ -1,0 +1,7 @@
+com\wenyu\ssm\mapper\GoodMapper.class
+com\wenyu\ssm\service\impl\GoodServiceImpl.class
+com\wenyu\ssm\bean\Goods.class
+com\wenyu\ssm\service\GoodService.class
+com\wenyu\ssm\util\PageHelpUtil.class
+com\wenyu\ssm\bean\GodType.class
+com\wenyu\ssm\controller\GoodController.class

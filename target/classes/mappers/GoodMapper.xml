@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wenyu.ssm.mapper.GoodMapper">
+
+    <!--sql片段-->
+    <sql id="goodSql">
+        gid,gname,pubDate,picture,price,star,intro,id,tname
+    </sql>
+    <!--
+        列表查询
+     -->
+    <select id="list" parameterType="string" resultType="map">
+        select
+        <include refid="goodSql" />
+        from t_goods g left join t_goods_type t
+        on g.typeid = t.id
+        <where>
+            <if test="gname != null and gname != ''">
+                gname like concat('%',#{gname},'%')
+            </if>
+        </where>
+    </select>
+
+    <insert id="add" parameterType="com.wenyu.ssm.bean.Goods">
+        insert into t_goods(gname,pubdate,picture,price,star,typeid)
+        values (#{gname}, #{pubdate}, #{picture},#{price}
+      #{star}, #{typeid})
+    </insert>
+
+
+</mapper>
