@@ -29,5 +29,11 @@ public class GoodServiceImpl implements GoodService {
         goodMapper.add(goods);
     }
 
+    @Override
+    public int update(Goods goods) {
+        int i = goodMapper.update(goods);
+        return i;
+    }
+
 
 }

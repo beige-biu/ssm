@@ -17,4 +17,6 @@ public interface GoodMapper {
     List<Map<String, Goods>> list(@Param("gname") String gname);
 
     void add(Goods goods);
+
+    int update(Goods goods);
 }

@@ -12,7 +12,6 @@
         图片地址：<input type="text" name="picture"><br>
         价格：<input type="number" name="price"><br>
         热度：<input type="number" maxlength="5" name="star"><br>
-        品类：<input type="number" name="typeid"><br>
         <input type="submit" value="提交">
 
     </form>

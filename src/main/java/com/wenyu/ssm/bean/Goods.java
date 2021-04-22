@@ -1,5 +1,7 @@
 package com.wenyu.ssm.bean;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -8,8 +10,9 @@ import java.util.Date;
  */
 public class Goods {
 
-    private int id;
+    private int gid;
     private String gname;
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date pubDate;
     private String picture;
     private float price;
@@ -21,7 +24,7 @@ public class Goods {
     @Override
     public String toString() {
         return "Goods{" +
-                "id=" + id +
+                "id=" + gid +
                 ", gname='" + gname + '\'' +
                 ", pubDate=" + pubDate +
                 ", picture='" + picture + '\'' +
@@ -32,12 +35,12 @@ public class Goods {
                 '}';
     }
 
-    public int getId() {
-        return id;
+    public int getgId() {
+        return gid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setgId(int id) {
+        this.gid = id;
     }
 
     public String getGname() {

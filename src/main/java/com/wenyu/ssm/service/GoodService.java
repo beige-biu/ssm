@@ -17,4 +17,6 @@ public interface GoodService {
     List<Map<String, Goods>> list( String gname);
 
     void add(Goods goods);
+
+    int update(Goods goods);
 }

@@ -22,11 +22,26 @@
         </where>
     </select>
 
+<!--    <insert id="add" parameterType="com.wenyu.ssm.bean.Goods">-->
+<!--        insert into t_goods(gname,pubdate,picture,price,star)-->
+<!--        values (#{gname,jdbcType=VARCHAR}, #{pubDate,jdbcType=TIMESTAMP}, #{picture,jdbcType=VARCHAR},#{price,jdbcType=INTEGER},-->
+<!--      #{star,jdbcType=INTEGER})-->
+<!--    </insert>-->
     <insert id="add" parameterType="com.wenyu.ssm.bean.Goods">
-        insert into t_goods(gname,pubdate,picture,price,star,typeid)
-        values (#{gname}, #{pubdate}, #{picture},#{price}
-      #{star}, #{typeid})
+        insert into t_goods(gname,pubdate,price,star,intro)
+        values (#{gname,jdbcType=VARCHAR}, #{pubDate,jdbcType=TIMESTAMP}, #{price,jdbcType=INTEGER},
+      #{star,jdbcType=INTEGER},#{intro,jdbcType=VARCHAR})
     </insert>
+
+    <update id="update" parameterType="com.wenyu.ssm.bean.Goods">
+        update t_goods set (gname=#{gname,jdbcType=VARCHAR}
+        ,pubdate=#{pubDate,jdbcType=TIMESTAMP}
+        ,price=#{price,jdbcType=INTEGER}
+        ,star=#{star,jdbcType=INTEGER}
+        ,intro=#{intro,jdbcType=VARCHAR})
+        where gid = #{gid,jdbcType=INTEGER}
+
+    </update>
 
 
 </mapper>

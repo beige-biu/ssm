@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -57,10 +58,16 @@ public class GoodController {
     }
 
     @RequestMapping("/add")
-    public String add(Goods goods){
+    public String add(Goods goods, MultipartFile photo){
         goodService.add(goods);
 
-        return "redirect:index";
+        return "redirect:list";
+    }
+
+    @RequestMapping("update")
+    public String update(Goods goods){
+        goodService.update(goods);
+        return "redirect:list";
     }
 
 }
